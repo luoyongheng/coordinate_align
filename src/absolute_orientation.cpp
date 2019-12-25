@@ -34,8 +34,8 @@ using namespace std;
         ground_stream>>ground_pose.time>>ground_pose.position(0)>>ground_pose.position(1)>>ground_pose.position(2);
         ground_dataset.push_back(ground_pose);
    }
-    assert(key_dataset.empty()) ;
-    assert(ground_dataset.empty()) ;
+//    assert(key_dataset.empty()) ;
+//    assert(ground_dataset.empty()) ;
   time_synchronization(key_dataset,ground_dataset);
 
  }
@@ -52,7 +52,7 @@ void  Coordinate_Align::time_synchronization( vector<PoseDatas> &key_dataset,  v
  //the time of the last keyframe must less than the time of the last ground truth
    while(key_dataset.back().time>=ground_dataset.back().time)
         key_dataset.erase(key_dataset.end());
-  assert(key_dataset.empty());
+//  assert(key_dataset.empty());
   int j=0;
   n=key_dataset.size();// duo to my the most time of keyframe dataset more than the most time of groundtruth dataset
   ofstream f;
